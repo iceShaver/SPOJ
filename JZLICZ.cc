@@ -11,8 +11,7 @@ int main() {
     map<char, unsigned> big_letters;
     cin >> rows;
     cin.ignore();
-    while (rows--)
-    {
+    while (rows--) {
         getline(cin, row);
         for(auto ch : row) {
             if(ch == ' ')
@@ -31,11 +30,9 @@ int main() {
             
         }
     }
-    for(auto pair : small_letters) {
+    for(auto pair : small_letters)
         cout << pair.first << " " << pair.second << endl;
-    }
-    for(auto pair : big_letters) {
+    for(auto pair : big_letters)
         cout << pair.first << " " << pair.second << endl;
-    }
     return 0;
 }
