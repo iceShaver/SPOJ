@@ -25,32 +25,28 @@ Matrix gen_fan(int degree) {
 	// draw corners
 	matrix[0][0] =
 		matrix[0][dimension] =
-		matrix[dimension][0] =
-		matrix[dimension][dimension] =
-		'*';
+			matrix[dimension][0] =
+				matrix[dimension][dimension] =
+					'*';
 
 	// walking around and putting '*' and '.' s
 	for (unsigned i = 1; i < dimension; ++i)
-		matrix[dimension - i][0]
-		= matrix[dimension][dimension - i]
-		= matrix[i][dimension]
-		= matrix[0][i]
-		= (i >= abs_degree) ^ (degree < 0) ? '*' : '.';
+		matrix[dimension - i][0] = matrix[dimension][dimension - i] = matrix[i][dimension] = matrix[0][i] = (i >= abs_degree) ^ (degree < 0) ? '*' : '.';
 	return matrix;
 }
 
-void print_fan(const Matrix& matrix) {
+void print_fan(const Matrix &matrix){
 	for (auto row : matrix) {
 		for (auto value : row)
 			cout << value;
 		cout << endl;
 	}
+	cout << endl;
 }
 
-int main(int argc, char* argv[]) {
-	int tests_number, fan_degree;
-	cin >> tests_number;
-	while (tests_number--) {
+int main() {
+	int fan_degree;
+	while(true) {
 		cin >> fan_degree;
 		if (!fan_degree) break;
 		print_fan(gen_fan(fan_degree));
