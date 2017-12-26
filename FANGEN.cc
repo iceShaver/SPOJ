@@ -1,3 +1,5 @@
+//SPOJ: FANGEN
+//TIME: 2017-12-26
 #include <vector>
 #include <iostream>
 using namespace std;
